@@ -1,0 +1,32 @@
+Entevista en linea con el especialista para procesamiento de material en bruto.
+ la operativa diaria no me dejaba tiempo para contestarte con tranquilidad
+Vamos a ello:
+
+    ¿Puedes describirme paso a paso cómo es una consulta diagnostico?
+
+Aquí debo decirte que tenemos dos protocolos según sea una consulta preventiva de una curativa.
+En el caso que la mascota venga con lesiones de piel o algún parásito visible siempre haremos una anamnesis. En ella preguntaremos antecedentes familiares (con que otros animales convive o ha convivido recientemente; antecedentes ambientales (donde ha vivido y donde vive en la actualidad, casa con jardín o patio, piso, lugares de paseo frecuentados...); manifestaciones clínicas (cuando aparecieron las lesiones, como han evolucionado, orden de aparición, contacto con otros animales enfermos, posible zoonosis: lesiones en cuidadores); información sobre tratamientos preventivos habituales y actualmente como lo están protegiendo). Una vez obtenida esta información hacemos la exploración física, diagnósticos diferenciales y plan de acción (pruebas, tratamientos, etc.)
+En el caso que sea una consulta preventiva, normalmente tratamos de obtener la información en las consultas vacunales porque no hay una consulta de prevención parasitaria como tal.
+
+    ¿Tienes algún documento con la lista de fármacos para cada rango o tipo de condiciones?
+
+Normalmente dividimos los tratamientos según el riesgo potencial de contagio 
+En líneas generales 
+riesgo de pulgas y garrapatas: isoxazolinas 
+riesgo de mosquitos vectores de enfermedades: collares de permetrinas o pipetas con semejante composición 
+
+    ¿Qué preguntas paso a paso haces en dicho diagnostico?
+
+Creo que te he contestado en la primera pregunta, pero voy a ampliarte algunas consideraciones generales mas 
+En el caso de cachorros es probable que hayan estado en contacto con más parásitos de los recomendables, por estar en colectividades tipo criadores, perreras, tiendas, etc. 
+Si vemos lesiones en los cachorros somos más incisivos a la hora de preguntar detalles de donde han podido estar, aunque no siempre es fácil para el propietario contestar porque no suelen saber en qué condiciones ha estado ese cachorro 
+
+    ¿Tienes una tabla de lugar/clima/parasito y algoritmo de diagnóstico en tu metodología?
+
+No, nos basamos más en conceptos generales como estos ejemplos que te pongo a continuación:
+Vive en una casa con patio o jardín y el perro duerme fuera: control para mosquitos (pipeta + collar)
+Vive en Madrid en un piso y hace paseos cotidianos por ciudad: control para mosquitos pulgas y garrapatas (pipetas o collar)
+Vive en Madrid y viaja a Levante o Andalucía (pipeta + collar)
+Vive en Madrid y viaja a Extremadura, Castillas o Norte de España (collar + isoxazolinas)
+Tiene lesiones en piel (cachorros y adultos): Isoxazolinas 
+
