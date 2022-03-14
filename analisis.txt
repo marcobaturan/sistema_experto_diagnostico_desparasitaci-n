@@ -1,0 +1,51 @@
+% cuestionario, para interfaz de usuario
+%Es perro? si/no
+%Es gato? si/no
+%edad? entero
+%Vive en un piso? si/no
+%vive en casa con jardin? si/no
+%En el exterior? si/no
+%Vive con otros animales? si/no
+%con que otros animales? (PENDINETE DE CONCRETAR)
+%Tiene contacto con niños? si/no
+%Tienne contacto con ancianos? si/no
+%Su mascota viaja frecuentmente? si/no
+%Viaja al campo? si/no
+%Viaja a la playa? si/no
+%Viaja a parques? si/no
+%Viaja a jardines? si/no
+%Viaja a montaña? si/no
+%Desparasita a su mascota? si/no/no siempre
+%PARA si/no siempre:
+%Para parasitos exernos? si/no
+%cuántas veces al año (ENTERO)
+%Qué productos utiliza? (Cadena)
+%Desparasita frenta a pulga? si/no
+%Desparasita frenta a garrapata? si/no
+%Desparasita frenta a Mosquito flebotomo? si/no
+%Desparasita frenta a mosquito filariosis? si/no
+%No sabe o no contesta: si/no
+%Tiene parasitos intestinales? si/no
+%Desparasita internamente? si/no
+%Cuántas veces desparasita internamente al año? ENTERO
+%Qué desparaitante interno usa?
+%Por qué desparasita a su mascota? Veterinario/amigo/bleogs o folletos
+%Qué alimentación toma el animal? casera/pienso/casera y pienso
+%Con qué frecuencia baña a su perro/gato/mascota?semanal/mensual/semestral/anual/otros
+%Ha notado últimamente cambios en su mascota respecto a peso? si/no
+%Ha notado últimamente cambios en su mascota respecto a piel? si/no
+%Ha notado últimamente cambios en su mascota respecto a pelo? si/no
+%Ha notado últimamente cambios en su mascota respecto a picores? si/no
+%Ha notado últimamente cambios en su mascota respecto a comer? si/no
+%Ha notado últimamente cambios en su mascota respecto a beber? si/no
+%Ha notado últimamente cambios en su mascota respecto a comportamiento? si/no
+%Sabes qué lesiones ó enfermedades pueden ocasionar las pulgas y las garrapatas a las personas? si/no
+% base de conocimeinto
+½ base de hechos
+% base de reglas
+%Vive en una casa con patio o jardín y el perro duerme fuera: control para mosquitos (pipeta + collar)
+%Vive en Madrid en un piso y hace paseos cotidianos por ciudad: control para mosquitos pulgas y garrapatas (pipetas o collar)
+%Vive en Madrid y viaja a Levante o Andalucía (pipeta + collar)
+%Vive en Madrid y viaja a Extremadura, Castillas o Norte de España (collar + isoxazolinas)
+%Tiene lesiones en piel (cachorros y adultos): Isoxazolinas 
+
