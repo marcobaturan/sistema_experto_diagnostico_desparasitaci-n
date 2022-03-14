@@ -39,7 +39,13 @@
 %Ha notado últimamente cambios en su mascota respecto a comer? si/no
 %Ha notado últimamente cambios en su mascota respecto a beber? si/no
 %Ha notado últimamente cambios en su mascota respecto a comportamiento? si/no
+%% Esta sección implica más la prevención pero igualmente se incluye para extender el exito en la terapia
 %Sabes qué lesiones ó enfermedades pueden ocasionar las pulgas y las garrapatas a las personas? si/no
+%¿El animal puede acceder a los lugares de puntos calientes (coches, casetas)? si/no
+%Pasa regularmente el cepillo o peine antipulgas a la mascota?
+%Con que regularidad aspira el docmicilio? diario/semanal/mensual
+%Con que regularidad aspira el docmicilio, caseta y coche? diario/semanal/mensual
+%Tiene mascotas con DAP? si/no
 % base de conocimeinto
 ½ base de hechos
 % base de reglas
@@ -48,4 +54,21 @@
 %Vive en Madrid y viaja a Levante o Andalucía (pipeta + collar)
 %Vive en Madrid y viaja a Extremadura, Castillas o Norte de España (collar + isoxazolinas)
 %Tiene lesiones en piel (cachorros y adultos): Isoxazolinas 
-
+%riesgo de pulgas y garrapatas: isoxazolinas 
+%riesgo de mosquitos vectores de enfermedades: collares de permetrinas o pipetas con semejante composición 
+% si hay zonas calientes de infestación entonces limpie y aplique insecticida específico en las zonas
+% si el animal visita casa/caseta/coche entonces aplique cepillado, desparsitado e insecticida
+% si el animal tiene DAP entonces aplique cepillado,desparasitado, insecticida, reduzca mobilidad.
+%ESTO ES PREVENCIÓN, CONJUNTA CON REGLAS DE PREVENCION Y CONSULTA DE PREVENCION
+%Evitar o limitar el acceso del animal a zonas con una alta densidad de garrapatas,
+%sobre todo, durante las estaciones del año en las que la actividad de las garrapatas
+%es más alta.
+%Inspección regular de los animales y eliminación inmediata de las garrapatas, en
+%caso de que se encuentren.
+%Usar acaricidas resistentes al agua y de acción residual.
+%Establecer pautas de control específicas para los felinos. Ya que aunque por sus
+%hábitos de limpieza, los gatos suelen estar menos afectados por las ETGs que los
+%perros, en ocasiones pueden constituir un problema de salud. En estos casos hay
+%que tener en cuenta las especiales características de los felinos para los que los
+%piretroides sintéticos muy concentrados o amidinas (si están registradas sólo para
+%su uso en perros) son tóxicos.
