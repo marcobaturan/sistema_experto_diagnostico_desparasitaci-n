@@ -103,3 +103,28 @@ flebotomos:-
   pregunta('¿Ha pasado por Murcia?');
   pregunta('¿Ha pasado por Andalucia?');
   pregunta('¿Ha pasado por Islas Baleares?').
+  
+leve:-
+  riesgo_leve,
+  pregunta('¿Vive en el interior del hogar?'),
+  pregunta('¿Tiene un adecuado nivel de higiena?'),
+  pregunta('¿Tiene contacto con otros animales?').
+  
+moderado:-
+  riesgo_moderado,
+  pregunta('Vive en el interior del hogar?')
+  pregunta('¿Sale frecuentemente de casa y ve otros animales?',)
+  
+grave:-
+  riesgo_grave,
+  pregunta('Vive en el interior del hogar?')
+  pregunta('¿Sale frecuentemente de casa y ve otros animales?',)
+  pregunta('Vive en el exterior?').
+  pregunta('¿Restos de basura o materia orgánica cerca?'),
+  pregunta('¿Cercanía a aguas estancadas?').
+  
+pauta_desparasiación:-
+  leve()
+  % pulgas, mensual en el periodo o lugar de infestación, mensual para garrapatas y mosquitos.
+  %moderado para pulgas, garrapatas y mosquitos, pauta mensual
+  % grave  para pulgas, garrapatas y mosquitos, pauta mensual
