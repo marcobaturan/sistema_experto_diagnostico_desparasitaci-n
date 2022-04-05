@@ -123,8 +123,8 @@ grave:-
   pregunta('¿Restos de basura o materia orgánica cerca?'),
   pregunta('¿Cercanía a aguas estancadas?').
   
-pauta_desparasiación:-
-  leve()
-  % pulgas, mensual en el periodo o lugar de infestación, mensual para garrapatas y mosquitos.
-  %moderado para pulgas, garrapatas y mosquitos, pauta mensual
-  % grave  para pulgas, garrapatas y mosquitos, pauta mensual
+%pauta_desparasiación
+  
+riesgo_leve:-write('Pulgas, mensual en el periodo o lugar de infestación, mensual para garrapatas y mosquitos').
+riesgo_moderado:- write('Para pulgas, garrapatas y mosquitos, pauta mensual').
+riesgo_grave:- write('Para pulgas, garrapatas y mosquitos, pauta mensual').
