@@ -1,5 +1,6 @@
 % Extracción de reglas para desparasitar canes.
 % Ectoparásitos y épocas.
+
 % NOROESTE
 pulgas:-
   tiene_pulgas,
@@ -123,8 +124,55 @@ grave:-
   pregunta('¿Restos de basura o materia orgánica cerca?'),
   pregunta('¿Cercanía a aguas estancadas?').
   
-%pauta_desparasiación
+% SECCIÓN DESPARASITACIÓN EXTERIOR.
   
-riesgo_leve:-write('Pulgas, mensual en el periodo o lugar de infestación, mensual para garrapatas y mosquitos').
-riesgo_moderado:- write('Para pulgas, garrapatas y mosquitos, pauta mensual').
-riesgo_grave:- write('Para pulgas, garrapatas y mosquitos, pauta mensual').
+riesgo_leve:-
+  write('Pulgas, mensual en el periodo o lugar de infestación, mensual para garrapatas y mosquitos'),
+  write('Si existen varias mascotas en el hogar, entonces desparasitar a todas'),
+  write('Realizar cepillado profundo.'),
+  write('Pasar aspirador y controlar el medio ambiente.').
+  
+riesgo_moderado:- 
+  write('Para pulgas, garrapatas y mosquitos, pauta mensual'),
+  write('Extracción de garrapatas visibles con inzas, incluyendo aparato bucal.'),
+  write('Evitar el acceso a zonas con garrapatas.'),
+  write('Realizar inspección diaria despues del  paseo.').
+  
+riesgo_grave:- 
+  write('Para pulgas, garrapatas y mosquitos, pauta mensual'),
+  write('Minimizar exposición, especialmete al amanecer y anochecer.'),
+  write('Retirar basura, restos orgánicos, instalar mosquiteras.'),
+  write('Evitar agua estancada, usar repelentes e insecticidas').
+  
+% SECCIÓN DESPARASITACIÓN INTERIOR.
+
+grupo_a:-
+  riesgo_a,
+  write('Vive solo en el interior en el hogar o sale bajo vigialncia'),
+  write('No tiene contacto con otros perros ni acude al parque u otras áreas de juego'),
+  write('No existe otros factores de riesgo').
+  
+grupo_b:-
+  riesgo_b,
+  write('Sale bajo vigilancia'),
+  write('Tiene contacto con otros perros, acude a parques u otras áreas de uego'),
+  write('No hay otros factores de riesgo').
+  
+grupo_c:-
+  riesgo_c,
+  write('Sale sin supervision,ve otros peerros y acude a parques o zonas de juego'),
+  write('Caza y come cualquier presa que encuentra o come carne cruda'),
+  write('Acude a protectoras, guarderias o zonas comunes'),
+  write('Es un perro profesional (policia, rescate,bomberos)'),
+  write('Convive con niños menores de 5 años o personas inmunodeprimidas').
+  
+grupo_d:-
+  riesgo_d,
+  write('Vive en un área endémica para Echinoccocus spp'),
+  write('Come presas animales y/o sale a cazar al exterior sin supervisión').
+  
+grupo_otros:-
+  riesgo_otros,
+  write('Cachorros,gestantes, o lactantes'),
+  write('Acuden a eventos, exibiciones o competiciones depoortivas.')
+  write('Vive en un area endémico de difilariosis/equinococosis')
