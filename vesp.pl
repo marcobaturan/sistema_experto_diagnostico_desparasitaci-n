@@ -7,25 +7,25 @@
 
 %% Main invoca menu y llama por defecto al resto de reglas.
 main:-
-	new(Menu, dialog('SE Veterinario sobre parásitos v0.2 ', size(500,500))),                % Cabecero.
+	new(Menu, dialog('VESP v0.4 ', size(500,500))),                % Cabecero.
 	new(L, label(nombre, 'Bienvenido al sistema de diagnostico')),                 % texto presentación.
 	new(@texto, label(nombre, 'Segun las respuestas dadas tendra su resultado:')), % Presenta resultado.
 	new(@respl, label(nombre, '')),
 	new(Salir, button('Salir', and(message(Menu,destroy), message(Menu, free)))),            % cierra e.
 	new(@boton, button('Realizar diagnostico', message(@prolog, botones))),                       % inicia tes.
+	new(@about, button('Sobre',message(@prolog,autores))),
 	send(Menu, append(L)), new(@btndiagnostico, button('Diagnostico?')),                     % consulta.
-	send(Menu,display,L,point(100,20)),                                       % posiciona la bienvenida.
-	send(Menu,display,@boton,point(130,150)),                       % Posiciona el botón 'Realizar test.
-	send(Menu,display,@texto,point(50,100)),    % Posiciona el texto explicativo de presentar resultado.
+	send(Menu,display,L,point(20,20)),                                       % posiciona la bienvenida.
+	send(Menu,display,@boton,point(30,80)),                       % Posiciona el botón 'Realizar test.
+	send(Menu,display,@texto,point(20,40)),    % Posiciona el texto explicativo de presentar resultado.
 	send(Menu,display,Salir,point(20,400)),                                   % posiciona el botón sali.
+	send(Menu,display,@about,point(300,400)),
 	send(Menu,display,@respl,point(20,130)),                        % posiciona el dialogo de respuesta.
 	send(Menu,open_centered).                          % Posiciona el menú en el centro de la pantalla,.
 
 % reglas de diagnostico de entrada.
 
-
-
-enfermedades('tiene pulgas'):- pulgas_n, !. % en la cabeza va el texto a mostrar
+enfermedades('Tiene Pulgas'):- pulgas_n, !. % en la cabeza va el texto a mostrar
 enfermedades('Tiene Pulgas'):- pulgas_s, !. % Poner aquí el tratameinto.
 enfermedades('Tiene garrapatas'):- garrapatas_n, !.
 enfermedades('Tiene garrapatas'):- garrapatas_s, !.
@@ -179,25 +179,25 @@ preguntar(Problema):-
   % Envia la respuesta a destino.
 	((Answer==si)->assert(si(Problema)); assert(no(Problema)),fail).
 
-% Mecanismo de afirmar o negar.
-pregunta(S):- 
-  (si(S)->true; (no(S)->fail;preguntar(S))). % Si o NO.
-limpiar:- 
-  retract(si(_)),fail. % Falla el si, entonces borra el último.
-limpiar:- 
-  retract(no(_)),fail. % falla el no, entonces borra el ultimo.
-limpiar.               % revisa la consulta invocandola.
+autores:-
+  new(Dialogo1, dialog('VESP v0.4')), % Cabecero.
+	new(L3, label(texto,'Veterinary Expert System for Parasites © Marco Baturan, MadriVet 2022.')),
+	send(Dialogo1,append(L3)),
+	send(Dialogo1,open_centered).
 
 
 botones :-lim,
 	send(@boton,free),
 	send(@btndiagnostico,free),
+	send(@about,free),
 	enfermedades(Enter),
 	send(@texto, selection('De acuerdo con el diagnostico:')),
 	send(@respl, selection(Enter)),
 	new(@boton, button('Iniciar su evaluación', message(@prolog, botones))),
+	new(@about, button('Autores',popup(@sobre,botones))),
 	send(Menu,display,@boton,point(40,50)),
 	send(Menu,display,@btndiagnostico,point(20,50)),
+	send(Menu,display,@about, point(60, 50)),
 	limpiar.
 
 lim:- 
@@ -207,5 +207,6 @@ limpiar2:-
 	send(@texto,free),
 	send(@respl,free),
 	send(@btndiagnostico,free),
-	send(@boton,free).
+	send(@boton,free),
+	send(@about,free).
 
