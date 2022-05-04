@@ -32,7 +32,7 @@ enfermedades('Tiene garrapatas'):- garrapatas_s, !.
 enfermedades('Tiene flebotomos'):- flebotomos_n, !.
 enfermedades('Tiene flebotomos'):- flebotomos_s, !.
 enfermedades('Tiene infección de mosquitos'):- mosquitos_n, !.
-
+% Cuándo fallan todas las de arriba y alcanza el fallo, la sigueinte regla da el aviso de diagnostico fuera de la base de datos.
 enfermedades('Enfermedad no declarada en base de conocimiento'):- not(pulgas_n),
                                                                   not(pulgas_s),
                                                                   not(garrapatas_n),
