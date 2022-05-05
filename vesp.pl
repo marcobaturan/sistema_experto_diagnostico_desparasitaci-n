@@ -4,49 +4,45 @@
 /*Importación de librería de interfaz gráfica.*/
 :- use_module(library(pce)).
 :- use_module(library(pce_style_item)).
-
+:-dynamic si/1,no/1.
 %% Main invoca menu y llama por defecto al resto de reglas.
 main:-
-	new(Menu, dialog('VESP v0.4 ', size(500,500))),                                          % Cabecero.
+	new(Menu, dialog('VESP v0.5 ', size(600,500))),                                          % Cabecero.
 	new(L, label(nombre, 'Bienvenido al sistema de diagnostico')),                 % texto presentación.
 	new(@texto, label(nombre, 'Segun las respuestas dadas tendra su resultado:')), % Presenta resultado.
 	new(@respl, label(nombre, '')),
 	new(Salir, button('Salir', and(message(Menu,destroy), message(Menu, free)))),            % cierra e.
 	new(@boton, button('Realizar diagnostico', message(@prolog, botones))),                % inicia tes.
-	%new(@about, button('Sobre', message(Menu, popup(autores)))),                                   % Copyright.
+	%new(@about, button('Sobre', message(Menu, popup(autores)))),                           % Copyright.
 	send(Menu, append(L)), new(@btndiagnostico, button('Diagnostico?')),                     % consulta.
-	send(Menu,display,L,point(20,20)),                                       % posiciona la bienvenida.
-	send(Menu,display,@boton,point(30,80)),                       % Posiciona el botón 'Realizar test.
-	send(Menu,display,@texto,point(20,40)),    % Posiciona el texto explicativo de presentar resultado.
+	send(Menu,display,L,point(20,20)),                                        % posiciona la bienvenida.
+	send(Menu,display,@boton,point(30,80)),                         % Posiciona el botón 'Realizar test.
+	send(Menu,display,@texto,point(20,40)),     % Posiciona el texto explicativo de presentar resultado.
 	send(Menu,display,Salir,point(20,400)),                                   % posiciona el botón sali.
-	%send(Menu,display,@about,point(300,400)),                                   % posicion botn sobre
+	%send(Menu,display,@about,point(300,400)),                                    % posicion botn sobre.
 	send(Menu,display,@respl,point(20,130)),                        % posiciona el dialogo de respuesta.
-	send(Menu,open_centered).                          % Posiciona el menú en el centro de la pantalla,.
+	send(Menu,open_centered).                           % Posiciona el menú en el centro de la pantalla.
 
 % reglas de diagnostico de entrada.
-
-enfermedades('Tiene Pulgas'):- pulgas_n, !. % en la cabeza va el texto a mostrar
-enfermedades('Tiene Pulgas'):- pulgas_s, !. % Poner aquí el tratameinto.
-enfermedades('Tiene garrapatas'):- garrapatas_n, !.
-enfermedades('Tiene garrapatas'):- garrapatas_s, !.
-enfermedades('Tiene flebotomos'):- flebotomos_n, !.
-enfermedades('Tiene flebotomos'):- flebotomos_s, !.
-enfermedades('Tiene infección de mosquitos'):- mosquitos_n, !.
-% Cuándo fallan todas las de arriba y alcanza el fallo, la sigueinte regla da el aviso de diagnostico fuera de la base de datos.
-enfermedades('Enfermedad no declarada en base de conocimiento'):- not(pulgas_n),
-                                                                  not(pulgas_s),
-                                                                  not(garrapatas_n),
-                                                                  not(garrapatas_s),
-                                                                  not(flebotomos_n),
-                                                                  not(flebotomos_s),
-                                                                  not(mosquitos_n),!.
+parasitos('Tiene Pulgas, tratameinto:'):- pulgas_n, !. % head:respuesta
+parasitos('Tiene Pulgas, tratameinto:'):- pulgas_s, !. % TODO: pon tratameinto.
+parasitos('Tiene garrapatas, tratameinto:'):- garrapatas_n, !.
+parasitos('Tiene garrapatas, tratameinto:'):- garrapatas_s, !.
+parasitos('Tiene flebotomos, tratameinto:'):- flebotomos_n, !.
+parasitos('Tiene flebotomos, tratameinto:'):- flebotomos_s, !.
+parasitos('Tiene infección de mosquitos, tratameinto:'):- mosquitos_n, !.
+% En caso de no encontrar solución.
+parasitos('Parasito no declarado en base de conocimiento.'):- not(pulgas_n),
+                                                             not(pulgas_s),
+                                                             not(garrapatas_n),
+                                                             not(garrapatas_s),
+                                                             not(flebotomos_n),
+                                                             not(flebotomos_s),
+                                                             not(mosquitos_n),!.
 
 % relgas especificas de cada entrada cómo enfermedad.
 % el primer functor de la cabeza es la pregunta de entrada.
-
-
 % Ectoparásitos y épocas.
-
 % NOROESTE
 pulgas_n:-
   tiene_pulgas,
@@ -160,9 +156,6 @@ tiene_flebotomos:- pregunta('¿Estuvo en Junio?').
 tiene_mosquitos:- pregunta('¿Ha estado en zonas de agua estancada en torno al amanecer o anochecer?').
 
 
-
-:-dynamic si/1,no/1.
-
 % Dialogo emergente para consultar.
 preguntar(Problema):-
   new(Dialogo, dialog('Examen veterinario.')), % Cabecero.
@@ -193,24 +186,15 @@ limpiar:-
   retract(no(_)),fail. % falla el no, entonces borra el ultimo.
 limpiar.               % revisa la consulta invocandola.
 
-%autores:-
-%  new(Dialogo1, dialog('VESP v0.4')), % Cabecero.
-%	new(L3, label(texto,'Veterinary Expert System for Parasites © Marco Baturan, MadriVet 2022.')),
-%	send(Dialogo1,append(L3)),
-%	send(Dialogo1,open_centered).
-
 
 botones :-lim,
 	send(@boton,free),
 	send(@btndiagnostico,free),
-	%send(@about,free),
-	enfermedades(Enter),
+	parasitos(Enter),
 	send(@texto, selection('De acuerdo con el diagnostico:')),
 	send(@respl, selection(Enter)),
 	new(@boton, button('Iniciar su evaluación', message(@prolog, botones))),
-	%new(@about, button('Autores', popup(autores))),
 	send(Menu,display,@boton,point(40,50)),
-
 	send(Menu,display,@btndiagnostico,point(20,50)),
 	limpiar.
 
@@ -221,6 +205,5 @@ limpiar2:-
 	send(@texto,free),
 	send(@respl,free),
 	send(@btndiagnostico,free),
-	%send(@about,free),
 	send(@boton,free).
 
